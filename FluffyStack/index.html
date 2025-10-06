@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/src/styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="module" src="/src/scripts/themeToggle.ts"></script>
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark-theme') {
+        document.documentElement.classList.add('dark-theme');
+      }
+    })();
+  </script>
+
+  <link rel="icon" type="image/svg" href="/icons/FluffyStack.svg" />
+  <title>Fluffy Stack</title>
+
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <header class="nav-top">
+
+    <div class="nav-brand">
+      <img src="/icons/FluffyStack.svg" alt="Fluffy Stack Logo" class="nav-logo" />
+      <a href="/"> Fluffy Stack</a>
+      <button id="theme-toggle" class="theme-toggle">
+        <img src="/icons/night-mode-off.png" alt="Light Mode" class="icon light-mode-icon">
+      </button>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="about">About</a></li>
+    </ul>
+
+  </header>
+
+  <main>
+    <nav class="nav-side">
+      <ul class="nav-links-side">
+        <li><a href="/"><img src="src/assets/icons/house.png" alt="Home icon" class="icon">Home</a></li>
+        <li><a href="/pancakes"><img src="src/assets/icons/pancake.png" alt="Pancakes icon" class="icon">Pancakes</a>
+        </li>
+        <li><a href="#"><img src="src/assets/icons/contact-mail.png" alt="Contact Us icon" class="icon">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="welcome-section">
+      <div class="welcome-content">
+        <h1>Welcome to Fluffy Stack</h1>
+        <p>Your destination for delicious pancake recipes and prices!</p>
+      </div>
+    </section>
+
+    <section class="featured-recipes">
+      <div class="featured-recipes-header">
+        <h2>Featured Recipes</h2>
+        <p>Explore our top pancake recipes loved by our community</p>
+      </div>
+      <div class="card-animation" id="dynamic-cards">
+        <!-- Recipe cards will be dynamically inserted here -->
+      </div>
+      <div class="form-popup" id="recipe-view-popup">
+        <!-- Popup content goes here -->
+        <div class="form-container">
+          <div id="recipe-details"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-us-section">
+      <h2>Why Choose Fluffy Stack?</h2>
+      <p>Discover the benefits of using Fluffy Stack for your pancake needs.</p>
+      <div class="features">
+        <div class="feature">
+          <img src="/src/assets/icons/time-left.png" alt="Quick Recipes" class="icon">
+          <h3>Quick Recipes</h3>
+          <p>Most recipes take less than 30 minutes</p>
+        </div>
+        <div class="feature">
+          <img src="/src/assets/icons/calories.png" alt="Nutritional Info" class="icon">
+          <h3>Nutritional Info</h3>
+          <p>Detailed nutritional information for each recipe</p>
+        </div>
+        <div class="feature">
+          <img src="/src/assets/icons/serving.png" alt="Serving Size" class="icon">
+          <h3>Flexible Portions</h3>
+          <p>Easy to adjust serving sizes</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-section">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to our newsletter for new recipes and updates</p>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <section class="testimonials-section">
+      <h2>What Our Users Say</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial">
+          <div class="user">
+            <img src="/src/assets/icons/user.png" alt="User 1" class="user-avatar">
+            <div class="user-info">
+              <h4>Svetlana L.</h4>
+              <p>Home Cook</p>
+            </div>
+          </div>
+          <p>"Once you cook it, you'll never forget it."</p>
+          <cite>- Svetlana L.</cite>
+        </div>
+        <div class="testimonial">
+          <div class="user">
+            <img src="/src/assets/icons/user.png" alt="User 2" class="user-avatar">
+            <div class="user-info">
+              <h4>John D.</h4>
+              <p>Chef</p>
+            </div>
+          </div>
+          <p>"Simple instructions and amazing results every time."</p>
+          <cite>- John D.</cite>
+        </div>
+        <div class="testimonial">
+          <div class="user">
+            <img src="/src/assets/icons/user.png" alt="User 3" class="user-avatar">
+            <div class="user-info">
+              <h4>Anna K.</h4>
+              <p>Food Blogger</p>
+            </div>
+          </div>
+
+          <div class="cite">
+            <p>"My family loves these pancake recipes!"</p>
+            <cite>- Anna K.</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Vladimir Buliukin. All rights reserved.</p>
+  </footer>
+</body>
+
+<script type="module">
+  import * as re from "/src/scripts/recipes.ts";
+
+  window.openFormPopup = re.openFormPopup;
+  window.closeFormPopup = re.closeFormPopup;
+
+  re.addRecipe('chocolate_chip_pancakes', 'dynamic-cards');
+  re.addRecipe('banana_pancakes', 'dynamic-cards');
+  re.addRecipe('blueberry_pancakes', 'dynamic-cards');
+
+</script>
+
+</html>

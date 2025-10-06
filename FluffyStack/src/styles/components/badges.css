@@ -1,0 +1,41 @@
+/*============ Badge Container ============*/
+.badge-container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/*============ Badge Base Styles ============*/
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+}
+
+/*============ Badge Variants ============*/
+.badge.popular {
+    background-color: #ff4500;
+}
+
+.badge.new {
+    background-color: #32cd32;
+}
+
+.badge.hot {
+    background-color: red;
+}
+
+/*============ Rating Styles ============*/
+.checked {
+    color: orange;
+}
+

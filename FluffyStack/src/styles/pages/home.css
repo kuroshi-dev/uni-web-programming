@@ -1,0 +1,237 @@
+section {
+  margin-top: 10px;
+  margin-left: 230px;
+  margin-right: 220px;
+  padding: 10px;
+}
+
+/*============ Welcome Section ============*/
+.welcome-section {
+  text-align: center;
+  align-items: center;
+  padding: 50px 20px;
+  border-radius: 10px;
+  background-image: url('/src/assets/cards/background.jpg');
+  background-size: cover;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding-left: 50px;
+}
+
+.welcome-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.welcome-section p {
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #f0f0f0;
+}
+
+/*============ Featured Recipes Section ============*/
+
+.featured-recipes-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.featured-recipes-header h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.featured-recipes-header p {
+  font-size: 1.2em;
+  color: #666;
+}
+
+/*============ Why Us Section ============*/
+
+.why-us-section {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.why-us-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.why-us-section p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.feature {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+}
+.feature h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.feature p {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.4;
+}
+
+.feature .icon {
+  height: 50px;
+  width: 50px;
+}
+
+/*============ Newsletter Section ============*/
+
+.newsletter-section {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.newsletter-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.newsletter-section p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.subscribe-form input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  width: 250px;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.subscribe-form input[type="email"]:focus {
+  border-color: #007bff;
+}
+
+.subscribe-form button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 15px;
+  background-color: #007bff;
+  transition: background-color 0.3s;
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+}
+
+.subscribe-form button:hover {
+  background-color: #0056b3;
+  transition: background-color 0.3s;
+}
+
+/*============ Testimonial Section ============*/
+
+.testimonials-section {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.testimonials-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.testimonials-section p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.testimonial {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 500px;
+  text-align: left;
+}
+
+.testimonial p {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.testimonial .user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.testimonial .user .name {
+  font-weight: bold;
+  color: #333;
+}
+
+.testimonial .cite {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 5px;
+}
+
+.user-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.user-info h4 {
+  margin: 0;
+  font-size: 1em;
+  color: #333;
+}
+.user-info p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #999;
+}

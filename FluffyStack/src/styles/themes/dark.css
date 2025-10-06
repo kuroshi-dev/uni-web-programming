@@ -1,0 +1,160 @@
+/*============ Root Theme Variables ============*/
+html.dark-theme,
+.dark-theme {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --text-secondary: #cccccc;
+  --text-third: #999999;
+  --text-hover: #aaaaaa;
+  --element-hover: #333333;
+  --card-bg: #222222;
+  --card-border: #333;
+  --header-bg: #222222;
+
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/*============ Main Layout Elements ============*/
+.dark-theme body {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+.dark-theme main {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: calc(100vh - 120px);
+}
+
+.dark-theme section {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.dark-theme footer {
+  background-color: var(--header-bg);
+  color: var(--text-color);
+  box-shadow: var(--footer-shadow);
+}
+
+/*============ Navigation Elements ============*/
+.dark-theme .nav-top {
+  background-color: var(--header-bg);
+  box-shadow: var(--header-shadow);
+}
+
+.dark-theme .nav-side {
+  background-color: var(--header-bg);
+  box-shadow: var(--header-shadow);
+}
+
+.dark-theme .nav-side a {
+  color: var(--text-color);
+}
+
+.dark-theme .nav-side a:hover {
+  background-color: var(--element-hover);
+  color: var(--text-color);
+}
+
+/*============ Card Elements ============*/
+.dark-theme .card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+.dark-theme .card-content {
+  padding: 10px;
+  color: var(--text-color);
+}
+.dark-theme .card-content h4, .dark-theme .recipe-title {
+  color: var(--text-color);
+}
+.dark-theme .card-content h4:hover, .dark-theme .recipe-title:hover {
+  color: var(--text-hover);
+}
+
+/*============ Section Elements ============*/
+.dark-theme .why-us-section {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.dark-theme .newsletter-section {
+  color: var(--text-color);
+}
+.dark-theme .subscribe-form input, .dark-theme .subscribe-form button {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--card-border);
+}
+
+.dark-theme .testimonial {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+.dark-theme .testimonial p {
+  color: var(--text-third);
+}
+.dark-theme  .testimonial cite {
+  color: var(--text-color);
+} 
+.dark-theme  .user-info h4 {
+  color: var(--text-color);
+}
+.dark-theme  .user-info p {
+  color: var(--text-secondary);
+}
+
+.feature {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.feature h3 {
+  color: var(--text-color);
+}
+.feature p {
+  color: var(--text-color);
+}
+
+
+/*============ Interactive Elements ============*/
+.dark-theme .icon {
+  filter: invert(1);
+}
+
+.dark-theme .card .recipe-details .icon {
+  filter: invert(0.4);
+}
+
+.dark-theme .nav-brand a {
+  color: var(--text-color);
+}
+.dark-theme .nav-brand a:hover {
+  color: var(--text-hover);
+}
+.dark-theme .nav-links a {
+  color: var(--text-color);
+}
+.dark-theme .nav-links a:hover {
+  background-color: var(--element-hover);
+  color: var(--text-color);
+}
+
+/*============ Media Queries ============*/
+@media screen and (max-width: 1279px) {
+  .dark-theme body {
+    min-height: 100vh;
+  }
+  
+  .dark-theme main {
+    min-height: calc(100vh - 180px);
+  }
+
+  .dark-theme .nav-side {
+    background-color: var(--header-bg);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  }
+}

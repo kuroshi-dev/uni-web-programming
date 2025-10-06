@@ -1,0 +1,189 @@
+/* Import base styles */
+@import 'base.css';
+
+/* Import components */
+@import 'components/navigation.css';
+@import 'components/form.css';
+@import 'components/card.css';
+@import 'components/badges.css';
+
+/* Import page-specific styles */
+@import 'pages/home.css';
+@import 'pages/about.css';
+
+/* Import themes */
+@import 'themes/dark.css';
+
+/*============ Theme Toggle Button ============*/
+.icon {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    border: 0;
+}
+
+.theme-toggle {
+    margin: 0 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: #333;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle:active {
+    transform: rotate(20deg);
+}
+
+/*============ Media Queries ============*/
+
+/* Extra Large Devices (Desktop, 1920px and up) */
+@media screen and (min-width: 1920px) {
+    section {
+        margin: 0 300px;
+    }
+}
+
+/* Large Devices (Laptops/Desktops, 1280px to 1919px) */
+@media screen and (min-width: 1280px) and (max-width: 1919px) {
+    section {
+        margin: 0 230px;
+    }
+}
+
+/* Medium Devices (Landscape Tablets, 1024px to 1279px) */
+@media screen and (max-width: 1279px) {
+    .nav-side {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        transform: none;
+        border-radius: 10px 10px 0 0;
+        padding: 10px 0;
+        z-index: 1000;
+        width: 95%;
+        margin: 0 auto;
+        box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-side ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-side a {
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+        font-size: 0.8em;
+    }
+
+    .feature {
+        flex-direction: column;
+        text-align: center;
+        width: 200px;
+        margin: 0 auto;
+        padding: 10px;
+        height: auto;
+    }
+
+    .feature h3 {
+        font-size: 1.2em;
+    }
+
+    .feature p {
+        font-size: 1em;
+    }
+
+    .features {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    section {
+        margin: 0 20px;
+    }
+
+    footer {
+        margin-bottom: 60px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+
+    /* Dark Theme Fix */
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1;
+    }
+}
+
+/* Small Devices (Portrait Tablets, 768px to 1023px) */
+@media screen and (max-width: 1023px) {
+    .card-sheet {
+        gap: 15px;
+    }
+
+    .card {
+        width: 45%;
+        min-width: 320px;
+    }
+}
+
+/* Extra Small Devices (Phones, 480px to 767px) */
+@media screen and (max-width: 767px) {
+    .welcome-section {
+        margin: 0;
+        padding: 20px 10px;
+        height: 110px;
+    }
+
+    .welcome-content {
+        margin: 0;
+        padding: 0;
+        height: auto;
+    }
+
+    .welcome-section h1 {
+        font-size: 1.5em;
+    }
+
+    .welcome-section p {
+        font-size: 1em;
+    }
+
+    .nav-brand a {
+        font-size: 1.2em;
+    }
+
+    .theme-toggle {
+        margin: 0 10px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    section {
+        margin: 10px;
+    }
+
+    body {
+        min-height: 100vh;
+    }
+}

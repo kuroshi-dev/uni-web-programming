@@ -1,0 +1,153 @@
+.card-sheet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.card-animation {
+  animation: 3s linear 0 slide-in;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.card {
+  width: 395px;
+  height: auto;
+  border-radius: 15px;
+  background-color: #FAFAF5;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card .image-container {
+  position: relative;
+  text-align: center;
+}
+
+.top-left {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+}
+
+.top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.card .recipe-image {
+  min-height: 265px;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.like-button {
+  display: flex;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.card-content h4,
+.recipe-title {
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+
+.card-content .card-title-like {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-content .like-button {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  padding-right: 5px;
+}
+
+.card-content h4,
+.recipe-title {
+  text-align: left;
+  cursor: default;
+}
+
+.card-content h4:hover,
+.recipe-title:hover {
+  color: #777;
+}
+
+.card-content p,
+.recipe-description {
+  text-align: left;
+  color: #666;
+  font-size: 0.9em;
+  cursor: default;
+}
+
+.recipe-details {
+  color: #666;
+  list-style-type: none;
+  align-items: center;
+  align-content: right;
+  display: flex;
+  gap: 10px;
+  padding-left: 10px;
+}
+
+.recipe-details .first-ul {
+  margin-left: 20px
+}
+
+.recipe-details .icon {
+  opacity: 0.6;
+  margin-bottom: 2px;
+}
+
+.view-recipe-button,
+.selection button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.view-recipe-button:hover,
+.selection button:hover {
+  background-color: #365917;
+}
+
+#price {
+  color: #426B1F;
+  font-weight: bold;
+  font-size: 1.2em;
+}

@@ -1,3 +1,5 @@
+import './slides.js';
+
 const recipes: Record<string, any> = {
     chocolate_chip_pancakes: {
         title: "Chocolate Chip Pancakes",
@@ -9,6 +11,8 @@ const recipes: Record<string, any> = {
         servings: 4,
         calories: 350,
         badges: ["Popular"],
+        hashtags: ["#chocolate", "#pancakes", "#sweet"],
+        video: "https://www.youtube.com/watch?v=nP02Dn4WTBU",
         ingredients: [
             "1 cup all-purpose flour",
             "2 tablespoons sugar",
@@ -39,6 +43,9 @@ const recipes: Record<string, any> = {
         totalTime: "25 mins",
         servings: 4,
         calories: 300,
+        badges: [],
+        hashtags: ["#blueberry", "#pancakes", "#breakfast"],
+        video: "https://www.youtube.com/watch?v=LU_uNGHUlgA",
         ingredients: [
             "1 cup all-purpose flour",
             "2 tablespoons sugar",
@@ -69,6 +76,9 @@ const recipes: Record<string, any> = {
         totalTime: "25 mins",
         servings: 4,
         calories: 320,
+        badges: [""],
+        hashtags: ["#buttermilk", "#pancakes", "#classic"],
+        video: "https://www.youtube.com/watch?v=zrDuoOJsyGM",
         ingredients: [
             "1 cup all-purpose flour",
             "2 tablespoons sugar",
@@ -98,6 +108,9 @@ const recipes: Record<string, any> = {
         totalTime: "25 mins",
         servings: 4,
         calories: 330,
+        badges: [],
+        hashtags: ["#banana", "#pancakes", "#breakfast"],
+        video: "https://www.youtube.com/watch?v=N1T1uNmSnOk",
         ingredients: [
             "1 cup all-purpose flour",
             "2 tablespoons sugar",
@@ -129,7 +142,7 @@ const recipes: Record<string, any> = {
         calories: 400,
         badges: [],
         hashtags: ["#fluffy", "#japanese", "#pancakes"],
-        video: "https://www.youtube.com/watch?v=tBTNMo77h2Q",
+        video: ["https://www.youtube.com/watch?v=tBTNMo77h2Q", "https://youtu.be/y2AYFpYn8ws?si=fVGXvDNDaCgIRopN"],
         ingredients: [
             "1 cup all-purpose flour",
             "2 tablespoons sugar",
@@ -165,6 +178,7 @@ const recipes: Record<string, any> = {
         calories: 330,
         badges: ["Popular", "New"],
         hashtags: ["#blinis", "#pancakes", "#traditional", "#yeasted"],
+        video: "https://www.youtube.com/watch?v=E_cohB81wL8",
         ingredients: [
             "1 cup all-purpose flour",
             "1 cup milk",
@@ -188,20 +202,71 @@ function openFormPopup(event: Event) {
     const popup = document.getElementById("recipe-view-popup");
     const recipeDetails = document.getElementById("recipe-details");
     const recipeKey = (event.target as HTMLElement).id.replace('view-recipe-', '');
+    const recipe = recipes[recipeKey];
+
     if (popup && recipeDetails) {
         popup.style.display = "block";
-        recipeDetails.innerHTML = createRecipeDetails(recipes[recipeKey]);
+        recipeDetails.innerHTML = createRecipeDetails(recipe);
+
+        setTimeout(() => {
+            const slides = document.querySelectorAll('.slide');
+            const navButtons = document.querySelectorAll('.prev, .next');
+
+            if (slides.length <= 1) {
+                navButtons.forEach(btn => (btn as HTMLElement).style.display = 'none');
+            } else {
+                navButtons.forEach(btn => (btn as HTMLElement).style.display = 'block');
+            }
+
+            if (typeof (window as any).showSlides === 'function') {
+                (window as any).slideIndex = 1;
+                (window as any).showSlides(1);
+            }
+        }, 100);
     }
 }
 
 function createRecipeDetails(recipe: any): string {
+    const getEmbedUrl = (url: string): string => {
+        if (url.includes('watch?v=')) {
+            return url.replace('watch?v=', 'embed/');
+        } else if (url.includes('youtu.be/')) {
+            const videoId = url.split('youtu.be/')[1].split('?')[0];
+            return `https://www.youtube.com/embed/${videoId}`;
+        }
+        return url;
+    };
+
+    const normalizeToArray = (item: string | string[]): string[] => {
+        if (!item) return [];
+        if (Array.isArray(item)) return item.filter(i => i.trim() !== '');
+        return typeof item === 'string' && item.trim() !== '' ? [item] : [];
+    };
+
+    const videos = normalizeToArray(recipe.video);
+    const images = normalizeToArray(recipe.image);
+
+    let mediaSlides = '';
+
+    videos.forEach(videoUrl => {
+        mediaSlides += `<iframe class="recipe-video slide" src="${getEmbedUrl(videoUrl)}" frameborder="0" allowfullscreen></iframe>`;
+    });
+
+    images.forEach(imageUrl => {
+        mediaSlides += `<img src="${imageUrl}" alt="${recipe.title}" class="recipe-detail-image slide">`;
+    });
+
     return /*html*/ `
         <div class="form-header">
             <h2 class="form-recipe-title">${recipe.title}</h2>
             <button class="close-popup" onclick="closeFormPopup()">&times;</button>
         </div>
         <div class="form-body">
-            <img src="${recipe.image}" alt="${recipe.title}" class="recipe-detail-image">
+            <div class="media-container">
+                ${mediaSlides}
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
             <div class="form-overview">
                 <ul>
                     <li>
@@ -243,7 +308,6 @@ function createRecipeDetails(recipe: any): string {
             </div>
         </div>
 
-        </div>
         <p class="form-recipe-description">${recipe.description}</p>
         <div class="divider"></div>
         <div class="form-ingredients-instructions">
@@ -285,9 +349,14 @@ function createRecipeCard(recipe: any, key: string): HTMLElement {
         </div>`;
     }
 
+    const getFirstImage = (image: string | string[]): string => {
+        if (Array.isArray(image)) return image[0] || '';
+        return image || '';
+    };
+
     card.innerHTML = /*html*/ `
         <div class="image-container">
-            <img src="${recipe.image}" alt="${recipe.title}" class="recipe-image">
+            <img src="${getFirstImage(recipe.image)}" alt="${recipe.title}" class="recipe-image">
             ${badgesHTML}
         </div>
         <div class="card-content">
@@ -298,7 +367,7 @@ function createRecipeCard(recipe: any, key: string): HTMLElement {
             <p class="recipe-description">${recipe.description}</p>
         
             <ul class="recipe-details">
-                <li><button class="view-recipe-button" id="view-recipe-${key}" onclick="openFormPopup(event)">View</button></li> <!-- Передаем event -->
+                <li><button class="view-recipe-button" id="view-recipe-${key}" onclick="openFormPopup(event)">View</button></li>
                 <li class="first-ul"><img src="/src/assets/icons/time-left.png" class="icon"> ${recipe.totalTime} </li>
                 <li><img src="/src/assets/icons/serving.png" class="icon"> ${recipe.servings}</li>
                 <li><img src="/src/assets/icons/calories.png" class="icon"> ${recipe.calories} kcal</li>

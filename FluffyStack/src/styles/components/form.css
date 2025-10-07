@@ -56,6 +56,7 @@
     flex: 1;
 }
 
+
 /*============ Form Body ============*/
 .form-body {
     display: flex;
@@ -63,11 +64,67 @@
     gap: 20px;
 }
 
+/*============ Slides Container ============*/
+.media-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.recipe-video {
+    width: 600px;
+    height: 337.5px;
+    border-radius: 10px;
+}
+
 .recipe-detail-image {
     width: 100%;
-    max-height: 400px;
+    aspect-ratio: 16/9;
     object-fit: cover;
     border-radius: 10px;
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.media-container .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.media-container .prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.next,
+.prev {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+.next:hover,
+.prev:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /*============ Form Overview Section ============*/

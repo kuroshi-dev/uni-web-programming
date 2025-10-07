@@ -119,6 +119,31 @@ html.dark-theme,
   color: var(--text-color);
 }
 
+/*============ Form Elements ============*/
+.dark-theme .form-body {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.dark-theme .form-recipe-title:hover {
+  color: var(--text-hover);
+}
+
+.dark-theme .form-container {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: none;
+}
+
+.dark-theme .value {
+  color: var(--text-color);
+}
+
+.dark-theme .form-overview {
+  background-color: var(--card-bg);
+  border: 2px solid var(--card-border);
+  color: var(--text-color);
+}
 
 /*============ Interactive Elements ============*/
 .dark-theme .icon {

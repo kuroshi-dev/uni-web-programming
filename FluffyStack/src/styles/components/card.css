@@ -143,7 +143,8 @@
 
 .view-recipe-button:hover,
 .selection button:hover {
-  background-color: #365917;
+  background-color: #45a049;
+  transform: scale(1.1);
 }
 
 #price {

@@ -65,14 +65,19 @@ html.dark-theme,
   background-color: var(--card-bg);
   color: var(--text-color);
 }
+
 .dark-theme .card-content {
   padding: 10px;
   color: var(--text-color);
 }
-.dark-theme .card-content h4, .dark-theme .recipe-title {
+
+.dark-theme .card-content h4,
+.dark-theme .recipe-title {
   color: var(--text-color);
 }
-.dark-theme .card-content h4:hover, .dark-theme .recipe-title:hover {
+
+.dark-theme .card-content h4:hover,
+.dark-theme .recipe-title:hover {
   color: var(--text-hover);
 }
 
@@ -85,7 +90,9 @@ html.dark-theme,
 .dark-theme .newsletter-section {
   color: var(--text-color);
 }
-.dark-theme .subscribe-form input, .dark-theme .subscribe-form button {
+
+.dark-theme .subscribe-form input,
+.dark-theme .subscribe-form button {
   background-color: var(--bg-color);
   color: var(--text-color);
   border: 1px solid var(--card-border);
@@ -95,16 +102,20 @@ html.dark-theme,
   background-color: var(--card-bg);
   color: var(--text-color);
 }
+
 .dark-theme .testimonial p {
   color: var(--text-third);
 }
-.dark-theme  .testimonial cite {
-  color: var(--text-color);
-} 
-.dark-theme  .user-info h4 {
+
+.dark-theme .testimonial cite {
   color: var(--text-color);
 }
-.dark-theme  .user-info p {
+
+.dark-theme .user-info h4 {
+  color: var(--text-color);
+}
+
+.dark-theme .user-info p {
   color: var(--text-secondary);
 }
 
@@ -112,9 +123,11 @@ html.dark-theme,
   background-color: var(--bg-color);
   color: var(--text-color);
 }
+
 .feature h3 {
   color: var(--text-color);
 }
+
 .feature p {
   color: var(--text-color);
 }
@@ -145,6 +158,32 @@ html.dark-theme,
   color: var(--text-color);
 }
 
+.dark-theme .form-overview h3 {
+  color: var(--text-color);
+}
+
+.dark-theme .ingredients-container,
+.dark-theme .instructions-container {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 2px solid var(--card-border);
+}
+
+/*============ Section Tabs ============*/
+.dark-theme .tab-button {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 2px solid var(--card-border);
+}
+
+.dark-theme .tab-button.active {
+  background: var(--bg-color);
+}
+
+.dark-theme .tab-button:hover {
+  background: var(--element-hover);
+}
+
 /*============ Interactive Elements ============*/
 .dark-theme .icon {
   filter: invert(1);
@@ -157,12 +196,15 @@ html.dark-theme,
 .dark-theme .nav-brand a {
   color: var(--text-color);
 }
+
 .dark-theme .nav-brand a:hover {
   color: var(--text-hover);
 }
+
 .dark-theme .nav-links a {
   color: var(--text-color);
 }
+
 .dark-theme .nav-links a:hover {
   background-color: var(--element-hover);
   color: var(--text-color);
@@ -173,7 +215,7 @@ html.dark-theme,
   .dark-theme body {
     min-height: 100vh;
   }
-  
+
   .dark-theme main {
     min-height: calc(100vh - 180px);
   }

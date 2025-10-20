@@ -14,6 +14,9 @@
 /* Import themes */
 @import 'themes/dark.css';
 
+/* Import utilities */
+@import 'utils/tags.css';
+
 /*============ Theme Toggle Button ============*/
 .icon {
     height: 20px;

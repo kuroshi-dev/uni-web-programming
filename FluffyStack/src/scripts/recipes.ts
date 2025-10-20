@@ -310,18 +310,24 @@ function createRecipeDetails(recipe: any): string {
 
         <p class="form-recipe-description">${recipe.description}</p>
         <div class="divider"></div>
+
+        <!-- section tabs -->
         <div class="form-ingredients-instructions">
-            <div class="ingredients-instructions-title">
-                <h2>Ingredients & Instructions</h2>
+
+            <div class="section-tabs">
+                <button class="tab-button active" onclick="showRecipeSection('ingredients', this)">Ingredients</button>
+                <button class="tab-button" onclick="showRecipeSection('instructions', this)">Instructions</button>
             </div>
+
             <div class="ingredients-container">
-                <h3>Ingredients:</h3>
+                <h3>Ingredients</h3>
                 <ul>
                     ${recipe.ingredients.map((ing: string) => `<li>${ing}</li>`).join('')}
                 </ul>
             </div>
-            <div class="instructions-container">
-                <h3>Instructions:</h3>
+
+            <div class="instructions-container hidden">
+                <h3>Instructions</h3>
                 <ol>
                     ${recipe.instructions.map((step: string) => `<li>${step}</li>`).join('')}
                 </ol>
@@ -407,3 +413,27 @@ export {
     closeFormPopup,
     createRecipeDetails
 };
+
+(window as any).showRecipeSection = function (section: string, btn?: HTMLElement) {
+    try {
+        const wrapper = btn ? btn.closest('.form-ingredients-instructions') : document.querySelector('.form-ingredients-instructions');
+        if (!wrapper) return;
+        const ing = wrapper.querySelector('.ingredients-container') as HTMLElement | null;
+        const ins = wrapper.querySelector('.instructions-container') as HTMLElement | null;
+        if (!ing || !ins) return;
+
+        if (section === 'ingredients') {
+            ing.classList.remove('hidden');
+            ins.classList.add('hidden');
+        } else {
+            ins.classList.remove('hidden');
+            ing.classList.add('hidden');
+        }
+
+        wrapper.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+        if (btn) (btn as HTMLElement).classList.add('active');
+    } catch (e) {
+        // silent
+    }
+};
+

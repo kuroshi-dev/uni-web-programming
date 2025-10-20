@@ -190,3 +190,69 @@
 }
 
 /*============ Ingredients and Instructions ============*/
+.ingredients-instructions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.ingredients-container,
+.instructions-container {
+    margin-top: 20px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    flex: 1 1 48%;
+    min-width: 220px;
+    padding: 16px;
+}
+
+.ingredients-instructions-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.ingredients-container h3,
+.instructions-container h3 {
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ingredients-container ul,
+.instructions-container ol {
+    padding-left: 20px;
+}
+
+.ingredients-container li,
+.instructions-container li {
+    margin-bottom: 5px;
+}
+
+/*============ Section Tabs ============*/
+.section-tabs {
+    display: flex;
+    gap: 8px;
+
+}
+
+.tab-button {
+    padding: 8px 12px;
+    border: none;
+    border-color: none;
+    border-radius: 15px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+    background: #f7f7f7;
+    cursor: pointer;
+}
+
+.tab-button:hover {
+    background: #efefef;
+}
+
+.tab-button.active {
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}

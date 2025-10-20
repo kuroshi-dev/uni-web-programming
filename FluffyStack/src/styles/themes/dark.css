@@ -87,6 +87,17 @@ html.dark-theme,
   color: var(--text-color);
 }
 
+.dark-theme .contact-container {
+  color: var(--text-color);
+  background: var(--background-color)
+}
+
+.dark-theme textarea,
+input {
+  background-color: var(--background-color);
+  border-color: var(--card-border) !important;
+}
+
 .dark-theme .newsletter-section {
   color: var(--text-color);
 }

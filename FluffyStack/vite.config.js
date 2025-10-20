@@ -29,7 +29,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         pancakes: path.resolve(__dirname, 'src/pages/pancakes.html'),
-        about: path.resolve(__dirname, 'src/pages/about.html')
+        about: path.resolve(__dirname, 'src/pages/about.html'),
+        contact_us: path.resolve(__dirname, 'src/pages/contact_us.html')
       }
     }
   }

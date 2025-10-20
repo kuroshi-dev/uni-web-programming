@@ -141,7 +141,7 @@ const recipes: Record<string, any> = {
         servings: 4,
         calories: 400,
         badges: [],
-        hashtags: ["#fluffy", "#japanese", "#pancakes"],
+        hashtags: ["#fluffy", "#japanese", "#pancakes", "#airy", "#breakfast"],
         video: ["https://www.youtube.com/watch?v=tBTNMo77h2Q", "https://youtu.be/y2AYFpYn8ws?si=fVGXvDNDaCgIRopN"],
         ingredients: [
             "1 cup all-purpose flour",
@@ -310,7 +310,11 @@ function createRecipeDetails(recipe: any): string {
 
         <p class="form-recipe-description">${recipe.description}</p>
         <div class="divider"></div>
-
+        <div class="hashtags-container">
+            <ul>
+                ${recipe.hashtags.map((tag: string) => `<li class="hashtag">${tag}</li>`).join('')}
+            </ul>
+        </div>
         <!-- section tabs -->
         <div class="form-ingredients-instructions">
 

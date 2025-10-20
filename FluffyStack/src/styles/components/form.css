@@ -189,6 +189,21 @@
     text-align: justify;
 }
 
+/*============ Hashtag Section ============*/
+.hashtags-container {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hashtag {
+    list-style-type: none;
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+}
+
 /*============ Ingredients and Instructions ============*/
 .ingredients-instructions {
     display: flex;
@@ -202,7 +217,7 @@
 .ingredients-container,
 .instructions-container {
     margin-top: 20px;
-    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     flex: 1 1 48%;
     min-width: 220px;
@@ -235,7 +250,8 @@
 .section-tabs {
     display: flex;
     gap: 8px;
-
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .tab-button {

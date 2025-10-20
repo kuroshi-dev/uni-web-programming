@@ -256,3 +256,182 @@
     background: #ffffff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
+
+/*============ Media Queries ============*/
+@media screen and (max-width: 768px) {
+    .form-container {
+        width: 90%;
+        margin: 2% auto;
+        padding: 15px;
+    }
+
+    .recipe-video {
+        width: 100%;
+        height: auto;
+    }
+
+    .form-overview ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ingredients-instructions {
+        flex-direction: column;
+    }
+
+    .ingredients-container,
+    .instructions-container {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .form-recipe-title {
+        font-size: 1.2em;
+    }
+
+    .next,
+    .prev {
+        padding: 8px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-container {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        padding: 10px;
+    }
+
+    .form-header {
+        margin-bottom: 10px;
+    }
+
+    .form-recipe-title {
+        font-size: 1.1em;
+    }
+
+    .close-popup {
+        font-size: 24px;
+        line-height: 24px;
+        height: 24px;
+        width: 24px;
+    }
+
+    .form-body {
+        gap: 10px;
+    }
+
+    .section-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .tab-button {
+        padding: 5px 8px;
+        font-size: 0.85em;
+        min-width: 70px;
+    }
+
+    .form-overview {
+        padding: 10px;
+    }
+
+    .form-overview ul {
+        gap: 8px;
+    }
+
+    .form-recipe-description {
+        font-size: 0.85em;
+        line-height: 1.4;
+    }
+
+    .ingredients-container,
+    .instructions-container {
+        padding: 10px;
+        margin-top: 10px;
+        min-width: unset;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .ingredients-container ul,
+    .instructions-container ol {
+        padding-left: 15px;
+        margin: 0;
+    }
+
+    .ingredients-instructions {
+        width: 100%;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .form-container {
+        padding: 8px;
+    }
+
+    .form-recipe-title {
+        font-size: 1em;
+    }
+
+    .form-overview .icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .value-container label {
+        font-size: 0.75em;
+    }
+
+    .value-container .value {
+        font-size: 0.8em;
+    }
+
+    .tab-button {
+        padding: 4px 6px;
+        font-size: 0.8em;
+        min-width: 60px;
+    }
+
+    .next,
+    .prev {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .ingredients-instructions {
+        gap: 10px;
+    }
+
+    .ingredients-container,
+    .instructions-container {
+        padding: 8px;
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    .ingredients-container ul,
+    .instructions-container ol {
+        padding-left: 12px;
+    }
+
+    .ingredients-container li,
+    .instructions-container li {
+        font-size: 0.8em;
+        margin-bottom: 2px;
+        line-height: 1.3;
+    }
+
+    .ingredients-container li,
+    .instructions-container li,
+    .form-recipe-description {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+}

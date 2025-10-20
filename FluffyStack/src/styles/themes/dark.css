@@ -81,6 +81,12 @@ html.dark-theme,
   color: var(--text-hover);
 }
 
+/*============ Hashtag Container ===========*/
+.dark-theme .hashtag {
+  background-color: var(--card-bg);
+  border: 2px solid var(--card-border);
+}
+
 /*============ Section Elements ============*/
 .dark-theme .why-us-section {
   background-color: var(--card-bg);

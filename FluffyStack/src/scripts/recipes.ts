@@ -372,7 +372,7 @@ function createRecipeCard(recipe: any, key: string): HTMLElement {
         <div class="card-content">
             <div class="card-title-like">
                 <h3 class="recipe-title">${recipe.title}</h3>
-                <img src="/src/assets/icons/heart.png" alt ="like-button" class="like-button icon">
+                <img src="/src/assets/icons/heart.png" alt ="like-button" id="like-button" class="like-button icon">
             </div>
             <p class="recipe-description">${recipe.description}</p>
         

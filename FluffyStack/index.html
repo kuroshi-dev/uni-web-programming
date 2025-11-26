@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
 
 <head>
   <meta charset="UTF-8" />
@@ -8,21 +8,28 @@
   <link rel="stylesheet" href="/src/styles/style.css" />
 
   <script type="module" src="/src/scripts/themeToggle.ts"></script>
+  <script type="module" src="/src/scripts/i18n.ts"></script>
   <script>
     (function () {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme === 'dark-theme') {
         document.documentElement.classList.add('dark-theme');
       }
+
+      // Встановлюємо українську мову за замовчуванням
+      const savedLocale = localStorage.getItem('fluffystack-locale') || 'uk';
+      document.documentElement.setAttribute('lang', savedLocale);
     })();
   </script>
   <script type="module" src="/src/scripts/slides.ts"></script>
 
   <link rel="icon" type="image/svg" href="/icons/FluffyStack.svg" />
-  <title>Fluffy Stack</title>
+  <title data-i18n="site.title">Fluffy Stack - Найкращі млинці</title>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () { });
+    document.addEventListener('DOMContentLoaded', function () {
+      // Инициализация i18n будет добавлена в i18n.ts
+    });
   </script>
 
 </head>
@@ -33,14 +40,17 @@
 
     <div class="nav-brand">
       <img src="/icons/FluffyStack.svg" alt="Fluffy Stack Logo" class="nav-logo" />
-      <a href="/"> Fluffy Stack</a>
+      <a href="/">Fluffy Stack</a>
       <button id="theme-toggle" class="theme-toggle">
         <img src="/icons/night-mode-off.png" alt="Light Mode" class="icon light-mode-icon">
       </button>
+      <div class="language-selector">
+
+      </div>
     </div>
 
     <ul class="nav-links">
-      <li><a href="about">About</a></li>
+      <li><a href="about" data-i18n="nav.about">Про нас</a></li>
     </ul>
 
   </header>
@@ -48,26 +58,28 @@
   <main>
     <nav class="nav-side">
       <ul class="nav-links-side">
-        <li><a href="/"><img src="src/assets/icons/house.png" alt="Home icon" class="icon">Home</a></li>
-        <li><a href="/pancakes"><img src="src/assets/icons/pancake.png" alt="Pancakes icon" class="icon">Pancakes</a>
+        <li><a href="/"><img src="src/assets/icons/house.png" alt="Home icon" class="icon"><span
+              data-i18n="nav.home">Головна</span></a></li>
+        <li><a href="/pancakes"><img src="src/assets/icons/pancake.png" alt="Pancakes icon" class="icon"><span
+              data-i18n="nav.pancakes">Млинці</span></a>
         </li>
-        <li><a href="/contact_us"><img src="src/assets/icons/contact-mail.png" alt="Contact Us icon"
-              class="icon">Contact Us</a>
+        <li><a href="/contact_us"><img src="src/assets/icons/contact-mail.png" alt="Contact Us icon" class="icon"><span
+              data-i18n="nav.contact">Контакти</span></a>
         </li>
       </ul>
     </nav>
 
     <section class="welcome-section">
       <div class="welcome-content">
-        <h1 data-i18n="home.hero.title">Welcome to Fluffy Stack</h1>
-        <p data-i18n="home.hero.subtitle">Your destination for delicious pancake recipes and prices!</p>
+        <h1 data-i18n="home.hero.title">Ласкаво просимо до Fluffy Stack</h1>
+        <p data-i18n="home.hero.subtitle">Ваш пункт призначення для смачних рецептів млинців та цін!</p>
       </div>
     </section>
 
     <section class="featured-recipes">
       <div class="featured-recipes-header">
-        <h2>Featured Recipes</h2>
-        <p>Explore our top pancake recipes loved by our community</p>
+        <h2 data-i18n="home.featured.title">Рекомендовані рецепти</h2>
+        <p data-i18n="home.featured.subtitle">Досліджуйте наші найкращі рецепти млинців, улюблені нашою спільнотою</p>
       </div>
       <div class="card-animation" id="dynamic-cards">
         <!-- Recipe cards will be dynamically inserted here -->
@@ -81,73 +93,74 @@
     </section>
 
     <section class="why-us-section">
-      <h2>Why Choose Fluffy Stack?</h2>
-      <p>Discover the benefits of using Fluffy Stack for your pancake needs.</p>
+      <h2 data-i18n="home.whyus.title">Чому варто обрати Fluffy Stack?</h2>
+      <p data-i18n="home.whyus.subtitle">Відкрийте переваги використання Fluffy Stack для ваших потреб у млинцях.</p>
       <div class="features">
         <div class="feature">
           <img src="/src/assets/icons/time-left.png" alt="Quick Recipes" class="icon">
-          <h3>Quick Recipes</h3>
-          <p>Most recipes take less than 30 minutes</p>
+          <h3 data-i18n="home.features.quick.title">Швидкі рецепти</h3>
+          <p data-i18n="home.features.quick.description">Більшість рецептів займають менше 30 хвилин</p>
         </div>
         <div class="feature">
           <img src="/src/assets/icons/calories.png" alt="Nutritional Info" class="icon">
-          <h3>Nutritional Info</h3>
-          <p>Detailed nutritional information for each recipe</p>
+          <h3 data-i18n="home.features.nutrition.title">Інформація про харчування</h3>
+          <p data-i18n="home.features.nutrition.description">Детальна інформація про харчування для кожного рецепта</p>
         </div>
         <div class="feature">
           <img src="/src/assets/icons/serving.png" alt="Serving Size" class="icon">
-          <h3>Flexible Portions</h3>
-          <p>Easy to adjust serving sizes</p>
+          <h3 data-i18n="home.features.portions.title">Гнучкі порції</h3>
+          <p data-i18n="home.features.portions.description">Легко регулювати розміри порцій</p>
         </div>
       </div>
     </section>
 
     <section class="newsletter-section">
-      <h2>Stay Updated</h2>
-      <p>Subscribe to our newsletter for new recipes and updates</p>
+      <h2 data-i18n="home.newsletter.title">Залишайтеся в курсі</h2>
+      <p data-i18n="home.newsletter.subtitle">Підпишіться на нашу розсилку для отримання нових рецептів та оновлень</p>
       <form class="subscribe-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
+        <input type="email" data-i18n-placeholder="home.newsletter.placeholder" placeholder="Введіть ваш email"
+          required>
+        <button type="submit" data-i18n="home.newsletter.button">Підписатися</button>
       </form>
     </section>
 
     <section class="testimonials-section">
-      <h2>What Our Users Say</h2>
+      <h2 data-i18n="home.testimonials.title">Що говорять наші користувачі</h2>
       <div class="testimonial-cards">
         <div class="testimonial">
           <div class="user">
             <img src="/src/assets/icons/user.png" alt="User 1" class="user-avatar">
             <div class="user-info">
-              <h4>Svetlana L.</h4>
-              <p>Home Cook</p>
+              <h4 data-i18n="home.testimonials.user1.name">Світлана Л.</h4>
+              <p data-i18n="home.testimonials.user1.role">Домашня кухарка</p>
             </div>
           </div>
-          <p>"Once you cook it, you'll never forget it."</p>
-          <cite>- Svetlana L.</cite>
+          <p data-i18n="home.testimonials.user1.quote">"Приготувавши це один раз, ви ніколи не забудете."</p>
+          <cite data-i18n="home.testimonials.user1.cite">- Світлana Л.</cite>
         </div>
         <div class="testimonial">
           <div class="user">
             <img src="/src/assets/icons/user.png" alt="User 2" class="user-avatar">
             <div class="user-info">
-              <h4>John D.</h4>
-              <p>Chef</p>
+              <h4 data-i18n="home.testimonials.user2.name">Джон Д.</h4>
+              <p data-i18n="home.testimonials.user2.role">Шеф-кухар</p>
             </div>
           </div>
-          <p>"Simple instructions and amazing results every time."</p>
-          <cite>- John D.</cite>
+          <p data-i18n="home.testimonials.user2.quote">"Прості інструкції та дивовижні результати щоразу."</p>
+          <cite data-i18n="home.testimonials.user2.cite">- Джон Д.</cite>
         </div>
         <div class="testimonial">
           <div class="user">
             <img src="/src/assets/icons/user.png" alt="User 3" class="user-avatar">
             <div class="user-info">
-              <h4>Anna K.</h4>
-              <p>Food Blogger</p>
+              <h4 data-i18n="home.testimonials.user3.name">Анна К.</h4>
+              <p data-i18n="home.testimonials.user3.role">Фуд-блогерка</p>
             </div>
           </div>
 
           <div class="cite">
-            <p>"My family loves these pancake recipes!"</p>
-            <cite>- Anna K.</cite>
+            <p data-i18n="home.testimonials.user3.quote">"Моя родина обожнює ці рецепти млинців!"</p>
+            <cite data-i18n="home.testimonials.user3.cite">- Анна К.</cite>
           </div>
         </div>
       </div>
@@ -155,7 +168,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Vladimir Buliukin. All rights reserved.</p>
+    <p data-i18n="footer.copyright">&copy; 2025 Володимир Булюкін. Всі права захищені.</p>
   </footer>
 </body>
 

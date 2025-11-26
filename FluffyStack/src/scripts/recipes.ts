@@ -1,9 +1,10 @@
 import './slides.js';
+import { i18n } from './i18n.js';
 
 const recipes: Record<string, any> = {
     chocolate_chip_pancakes: {
-        title: "Chocolate Chip Pancakes",
-        description: "Fluffy pancakes loaded with chocolate chips, perfect for a sweet breakfast treat.",
+        titleKey: "recipe.chocolate_chip_pancakes.title",
+        descriptionKey: "recipe.chocolate_chip_pancakes.description",
         image: "/src/assets/cards/chocolate-chip-pancakes.jpg",
         prepTime: "10 mins",
         cookTime: "15 mins",
@@ -11,9 +12,9 @@ const recipes: Record<string, any> = {
         servings: 4,
         calories: 350,
         badges: ["Popular"],
-        hashtags: ["#chocolate", "#pancakes", "#sweet"],
+        hashtagKeys: ["hashtag.chocolate", "hashtag.pancakes", "hashtag.sweet"],
         video: "https://www.youtube.com/watch?v=nP02Dn4WTBU",
-        ingredients: [
+        ingredientKeys: [
             "1 cup all-purpose flour",
             "2 tablespoons sugar",
             "1 tablespoon baking powder",
@@ -23,20 +24,20 @@ const recipes: Record<string, any> = {
             "2 tablespoons melted butter",
             "1/2 cup chocolate chips"
         ],
-        instructions: [
-            "In a bowl, mix flour, sugar, baking powder, and salt.",
-            "In another bowl, whisk milk, egg, and melted butter.",
-            "Combine wet and dry ingredients until just mixed.",
+        instructionKeys: [
+            "instruction.mix_dry",
+            "instruction.whisk_wet",
+            "instruction.combine_ingredients",
             "Fold in chocolate chips.",
-            "Heat a non-stick skillet over medium heat.",
-            "Pour 1/4 cup batter for each pancake.",
-            "Cook until bubbles form, then flip and cook until golden.",
+            "instruction.heat_skillet",
+            "instruction.pour_batter",
+            "instruction.cook_flip",
             "Serve with syrup and extra chocolate chips."
         ]
     },
     blueberry_pancakes: {
-        title: "Blueberry Pancakes",
-        description: "Light and fluffy pancakes bursting with fresh blueberries, a classic favorite.",
+        titleKey: "recipe.blueberry_pancakes.title",
+        descriptionKey: "recipe.blueberry_pancakes.description",
         image: "/src/assets/cards/blueberry-pancakes.jpg",
         prepTime: "10 mins",
         cookTime: "15 mins",
@@ -44,9 +45,9 @@ const recipes: Record<string, any> = {
         servings: 4,
         calories: 300,
         badges: [],
-        hashtags: ["#blueberry", "#pancakes", "#breakfast"],
+        hashtagKeys: ["hashtag.blueberry", "hashtag.pancakes", "hashtag.breakfast"],
         video: "https://www.youtube.com/watch?v=LU_uNGHUlgA",
-        ingredients: [
+        ingredientKeys: [
             "1 cup all-purpose flour",
             "2 tablespoons sugar",
             "1 tablespoon baking powder",
@@ -56,30 +57,30 @@ const recipes: Record<string, any> = {
             "2 tablespoons melted butter",
             "1/2 cup fresh blueberries"
         ],
-        instructions: [
-            "In a bowl, mix flour, sugar, baking powder, and salt.",
-            "In another bowl, whisk milk, egg, and melted butter.",
-            "Combine wet and dry ingredients until just mixed.",
+        instructionKeys: [
+            "instruction.mix_dry",
+            "instruction.whisk_wet",
+            "instruction.combine_ingredients",
             "Gently fold in blueberries.",
-            "Heat a non-stick skillet over medium heat.",
-            "Pour 1/4 cup batter for each pancake.",
-            "Cook until bubbles form, then flip and cook until golden.",
+            "instruction.heat_skillet",
+            "instruction.pour_batter",
+            "instruction.cook_flip",
             "Serve with syrup and extra blueberries."
         ]
     },
     buttermilk_pancakes: {
-        title: "Buttermilk Pancakes",
-        description: "Classic buttermilk pancakes that are light, fluffy, and perfect for any breakfast.",
+        titleKey: "recipe.buttermilk_pancakes.title",
+        descriptionKey: "recipe.buttermilk_pancakes.description",
         image: "/src/assets/cards/buttermilk-pancakes.jpg",
         prepTime: "10 mins",
         cookTime: "15 mins",
         totalTime: "25 mins",
         servings: 4,
         calories: 320,
-        badges: [""],
-        hashtags: ["#buttermilk", "#pancakes", "#classic"],
+        badges: [],
+        hashtagKeys: ["hashtag.buttermilk", "hashtag.pancakes", "hashtag.classic"],
         video: "https://www.youtube.com/watch?v=zrDuoOJsyGM",
-        ingredients: [
+        ingredientKeys: [
             "1 cup all-purpose flour",
             "2 tablespoons sugar",
             "1 tablespoon baking powder",
@@ -89,29 +90,29 @@ const recipes: Record<string, any> = {
             "1 large egg",
             "2 tablespoons melted butter"
         ],
-        instructions: [
+        instructionKeys: [
             "In a bowl, mix flour, sugar, baking powder, baking soda, and salt.",
-            "In another bowl, whisk buttermilk, egg, and melted butter.",
-            "Combine wet and dry ingredients until just mixed.",
-            "Heat a non-stick skillet over medium heat.",
-            "Pour 1/4 cup batter for each pancake.",
-            "Cook until bubbles form, then flip and cook until golden.",
+            "instruction.whisk_wet",
+            "instruction.combine_ingredients",
+            "instruction.heat_skillet",
+            "instruction.pour_batter",
+            "instruction.cook_flip",
             "Serve with syrup and butter."
         ]
     },
     banana_pancakes: {
-        title: "Banana Pancakes",
-        description: "Delicious pancakes made with ripe bananas, perfect for a hearty breakfast.",
-        image: "/src/assets/cards/banana-pancake.jpg",
+        titleKey: "recipe.banana_pancakes.title",
+        descriptionKey: "recipe.banana_pancakes.description",
+        image: "/src/assets/cards/banana-pancake.avif",
         prepTime: "10 mins",
         cookTime: "15 mins",
         totalTime: "25 mins",
         servings: 4,
         calories: 330,
         badges: [],
-        hashtags: ["#banana", "#pancakes", "#breakfast"],
+        hashtagKeys: ["hashtag.banana", "hashtag.pancakes", "hashtag.breakfast"],
         video: "https://www.youtube.com/watch?v=N1T1uNmSnOk",
-        ingredients: [
+        ingredientKeys: [
             "1 cup all-purpose flour",
             "2 tablespoons sugar",
             "1 tablespoon baking powder",
@@ -121,19 +122,19 @@ const recipes: Record<string, any> = {
             "2 tablespoons melted butter",
             "1 ripe banana, mashed"
         ],
-        instructions: [
-            "In a bowl, mix flour, sugar, baking powder, and salt.",
+        instructionKeys: [
+            "instruction.mix_dry",
             "In another bowl, whisk milk, egg, melted butter, and mashed banana.",
-            "Combine wet and dry ingredients until just mixed.",
-            "Heat a non-stick skillet over medium heat.",
-            "Pour 1/4 cup batter for each pancake.",
-            "Cook until bubbles form, then flip and cook until golden.",
+            "instruction.combine_ingredients",
+            "instruction.heat_skillet",
+            "instruction.pour_batter",
+            "instruction.cook_flip",
             "Serve with syrup and sliced bananas."
         ]
     },
     fluffy_japanese_pancakes: {
-        title: "Fluffy Japanese Pancakes",
-        description: "Light and airy Japanese-style pancakes that are thick and fluffy, a delightful treat.",
+        titleKey: "recipe.fluffy_japanese_pancakes.title",
+        descriptionKey: "recipe.fluffy_japanese_pancakes.description",
         image: "/src/assets/cards/fluffy-japanese-pancakes.jpg",
         prepTime: "15 mins",
         cookTime: "20 mins",
@@ -141,9 +142,9 @@ const recipes: Record<string, any> = {
         servings: 4,
         calories: 400,
         badges: [],
-        hashtags: ["#fluffy", "#japanese", "#pancakes", "#airy", "#breakfast"],
+        hashtagKeys: ["hashtag.fluffy", "hashtag.japanese", "hashtag.pancakes", "hashtag.airy", "hashtag.breakfast"],
         video: ["https://www.youtube.com/watch?v=tBTNMo77h2Q", "https://youtu.be/y2AYFpYn8ws?si=fVGXvDNDaCgIRopN"],
-        ingredients: [
+        ingredientKeys: [
             "1 cup all-purpose flour",
             "2 tablespoons sugar",
             "1 teaspoon baking powder",
@@ -155,10 +156,10 @@ const recipes: Record<string, any> = {
             "2 tablespoons melted butter",
             "1/4 teaspoon cream of tartar"
         ],
-        instructions: [
+        instructionKeys: [
             "In a bowl, mix flour, sugar, baking powder, baking soda, and salt.",
             "In another bowl, whisk buttermilk, egg yolks, vanilla extract, and melted butter.",
-            "Combine wet and dry ingredients until just mixed.",
+            "instruction.combine_ingredients",
             "In a separate bowl, beat egg whites with cream of tartar until stiff peaks form.",
             "Gently fold egg whites into the batter in three additions.",
             "Heat a non-stick skillet over low heat and grease lightly.",
@@ -168,8 +169,8 @@ const recipes: Record<string, any> = {
         ]
     },
     blinis: {
-        title: "Blinis",
-        description: "Yeasted pancakes from Eastern Europe, specialy in Ukraine, traditionally made with love.",
+        titleKey: "recipe.blinis.title",
+        descriptionKey: "recipe.blinis.description",
         image: "/src/assets/cards/blinis.jpg",
         prepTime: "10 mins",
         cookTime: "15 mins",
@@ -177,32 +178,55 @@ const recipes: Record<string, any> = {
         servings: 4,
         calories: 330,
         badges: ["Popular", "New"],
-        hashtags: ["#blinis", "#pancakes", "#traditional", "#yeasted"],
+        hashtagKeys: ["hashtag.blinis", "hashtag.pancakes", "hashtag.traditional", "hashtag.yeasted"],
         video: "https://www.youtube.com/watch?v=E_cohB81wL8",
-        ingredients: [
+        ingredientKeys: [
             "1 cup all-purpose flour",
             "1 cup milk",
             "1 large egg",
             "1 tablespoon sugar",
-            "1/2 teaspoon salt",
+            "1/2 teaspoon salt"
         ],
-        instructions: [
+        instructionKeys: [
             "In a bowl, mix flour, sugar, and salt.",
             "In another bowl, whisk milk and egg.",
-            "Combine wet and dry ingredients until just mixed.",
-            "Heat a non-stick skillet over medium heat.",
-            "Pour 1/4 cup batter for each pancake.",
-            "Cook until bubbles form, then flip and cook until golden.",
+            "instruction.combine_ingredients",
+            "instruction.heat_skillet",
+            "instruction.pour_batter",
+            "instruction.cook_flip",
             "Serve with sour cream and caviar."
         ]
     },
 };
+
+// Функция для получения локализованного текста
+function getLocalizedText(key: string): string {
+    if (key.startsWith('hashtag.') || key.startsWith('recipe.') || key.startsWith('instruction.') || key.startsWith('ingredient.')) {
+        return i18n.t(key);
+    }
+    return key; // Возвращаем как есть, если нет ключа локализации
+}
+
+// Функция для получения локализованного бейджа
+function getLocalizedBadge(badge: string): string {
+    const badgeKey = `badge.${badge.toLowerCase()}`;
+    return i18n.t(badgeKey);
+}
+
+// Добавляем переменную для отслеживания текущего рецепта
+let currentActiveRecipeKey: string | null = null;
+
+// Добавляем переменную для отслеживания отображаемых рецептов
+let displayedRecipes: Set<string> = new Set();
 
 function openFormPopup(event: Event) {
     const popup = document.getElementById("recipe-view-popup");
     const recipeDetails = document.getElementById("recipe-details");
     const recipeKey = (event.target as HTMLElement).id.replace('view-recipe-', '');
     const recipe = recipes[recipeKey];
+
+    // Сохраняем ключ активного рецепта
+    currentActiveRecipeKey = recipeKey;
 
     if (popup && recipeDetails) {
         popup.style.display = "block";
@@ -253,12 +277,12 @@ function createRecipeDetails(recipe: any): string {
     });
 
     images.forEach(imageUrl => {
-        mediaSlides += `<img src="${imageUrl}" alt="${recipe.title}" class="recipe-detail-image slide">`;
+        mediaSlides += `<img src="${imageUrl}" alt="${getLocalizedText(recipe.titleKey)}" class="recipe-detail-image slide">`;
     });
 
     return /*html*/ `
         <div class="form-header">
-            <h2 class="form-recipe-title">${recipe.title}</h2>
+            <h2 class="form-recipe-title">${getLocalizedText(recipe.titleKey)}</h2>
             <button class="close-popup" onclick="closeFormPopup()">&times;</button>
         </div>
         <div class="form-body">
@@ -272,35 +296,35 @@ function createRecipeDetails(recipe: any): string {
                     <li>
                         <img src="/src/assets/icons/prep-time.png" class="icon">
                         <div class="value-container">
-                            <label>Preparation</label>
+                            <label>${i18n.t('recipe.prep.time')}</label>
                             <span class="value">${recipe.prepTime}</span>
                         </div>
                     </li>
                     <li>
                         <img src="/src/assets/icons/cook-time.png" class="icon">
                         <div class="value-container">
-                            <label>Cooking</label>
+                            <label>${i18n.t('recipe.cook.time')}</label>
                             <span class="value">${recipe.cookTime}</span>
                         </div>
                     </li>
                     <li>
                         <img src="/src/assets/icons/time-left.png" class="icon">
                         <div class="value-container">
-                            <label>Total</label>
+                            <label>${i18n.t('recipe.total.time')}</label>
                             <span class="value">${recipe.totalTime}</span>
                         </div>
                     </li>
                     <li>
                         <img src="/src/assets/icons/serving.png" class="icon">
                         <div class="value-container">
-                            <label>Servings</label>
-                            <span class="value">${recipe.servings} portions</span>
+                            <label>${i18n.t('recipe.servings')}</label>
+                            <span class="value">${recipe.servings} ${i18n.t('recipe.portions')}</span>
                         </div>
                     </li>
                     <li>
                         <img src="/src/assets/icons/calories.png" class="icon">
                         <div class="value-container">
-                            <label>kcal</label>
+                            <label>${i18n.t('recipe.calories')}</label>
                             <span class="value">${recipe.calories}</span>
                         </div>
                     </li>
@@ -308,32 +332,32 @@ function createRecipeDetails(recipe: any): string {
             </div>
         </div>
 
-        <p class="form-recipe-description">${recipe.description}</p>
+        <p class="form-recipe-description">${getLocalizedText(recipe.descriptionKey)}</p>
         <div class="divider"></div>
         <div class="hashtags-container">
             <ul>
-                ${recipe.hashtags.map((tag: string) => `<li class="hashtag">${tag}</li>`).join('')}
+                ${recipe.hashtagKeys.map((tagKey: string) => `<li class="hashtag">${getLocalizedText(tagKey)}</li>`).join('')}
             </ul>
         </div>
         <!-- section tabs -->
         <div class="form-ingredients-instructions">
 
             <div class="section-tabs">
-                <button class="tab-button active" onclick="showRecipeSection('ingredients', this)">Ingredients</button>
-                <button class="tab-button" onclick="showRecipeSection('instructions', this)">Instructions</button>
+                <button class="tab-button active" onclick="showRecipeSection('ingredients', this)">${i18n.t('recipe.ingredients')}</button>
+                <button class="tab-button" onclick="showRecipeSection('instructions', this)">${i18n.t('recipe.instructions')}</button>
             </div>
 
             <div class="ingredients-container">
-                <h3>Ingredients</h3>
+                <h3>${i18n.t('recipe.ingredients')}</h3>
                 <ul>
-                    ${recipe.ingredients.map((ing: string) => `<li>${ing}</li>`).join('')}
+                    ${recipe.ingredientKeys.map((ingKey: string) => `<li>${getLocalizedText(ingKey)}</li>`).join('')}
                 </ul>
             </div>
 
             <div class="instructions-container hidden">
-                <h3>Instructions</h3>
+                <h3>${i18n.t('recipe.instructions')}</h3>
                 <ol>
-                    ${recipe.instructions.map((step: string) => `<li>${step}</li>`).join('')}
+                    ${recipe.instructionKeys.map((stepKey: string) => `<li>${getLocalizedText(stepKey)}</li>`).join('')}
                 </ol>
             </div>
         </div>
@@ -345,6 +369,8 @@ function closeFormPopup() {
     if (popup) {
         popup.style.display = "none";
     }
+    // Сбрасываем активный рецепт
+    currentActiveRecipeKey = null;
 }
 
 function createRecipeCard(recipe: any, key: string): HTMLElement {
@@ -355,7 +381,7 @@ function createRecipeCard(recipe: any, key: string): HTMLElement {
     if (recipe.badges) {
         badgesHTML = /*html*/`<div class="badge-container">
             ${recipe.badges.map((badge: string) =>
-                /*html*/ `<span class="badge ${badge.toLowerCase()}">${badge}</span>`).join('')}
+                /*html*/ `<span class="badge ${badge.toLowerCase()}">${getLocalizedBadge(badge)}</span>`).join('')}
         </div>`;
     }
 
@@ -366,21 +392,21 @@ function createRecipeCard(recipe: any, key: string): HTMLElement {
 
     card.innerHTML = /*html*/ `
         <div class="image-container">
-            <img src="${getFirstImage(recipe.image)}" alt="${recipe.title}" class="recipe-image">
+            <img src="${getFirstImage(recipe.image)}" alt="${getLocalizedText(recipe.titleKey)}" class="recipe-image">
             ${badgesHTML}
         </div>
         <div class="card-content">
             <div class="card-title-like">
-                <h3 class="recipe-title">${recipe.title}</h3>
+                <h3 class="recipe-title">${getLocalizedText(recipe.titleKey)}</h3>
                 <img src="/src/assets/icons/heart.png" alt ="like-button" class="like-button icon">
             </div>
-            <p class="recipe-description">${recipe.description}</p>
+            <p class="recipe-description">${getLocalizedText(recipe.descriptionKey)}</p>
         
             <ul class="recipe-details">
-                <li><button class="view-recipe-button" id="view-recipe-${key}" onclick="openFormPopup(event)">View</button></li>
+                <li><button class="view-recipe-button" id="view-recipe-${key}" onclick="openFormPopup(event)">${i18n.t('recipe.view')}</button></li>
                 <li class="first-ul"><img src="/src/assets/icons/time-left.png" class="icon"> ${recipe.totalTime} </li>
                 <li><img src="/src/assets/icons/serving.png" class="icon"> ${recipe.servings}</li>
-                <li><img src="/src/assets/icons/calories.png" class="icon"> ${recipe.calories} kcal</li>
+                <li><img src="/src/assets/icons/calories.png" class="icon"> ${recipe.calories} ${i18n.t('recipe.calories')}</li>
             </ul>
         </div>
     `;
@@ -392,10 +418,12 @@ function renderRecipes(recipes: Record<string, any>, containerId: string = "dyna
     if (!container) return;
 
     container.innerHTML = "";
+    displayedRecipes.clear(); // Очищаем список отображаемых рецептов
 
     Object.entries(recipes).forEach(([key, recipe]) => {
         const card = createRecipeCard(recipe, key);
         container.appendChild(card);
+        displayedRecipes.add(key); // Добавляем в список отображаемых
     });
 }
 
@@ -405,8 +433,59 @@ function addRecipe(recipeKey: string, containerId: string = "dynamic-cards") {
 
     const card = createRecipeCard(recipes[recipeKey], recipeKey);
     container.appendChild(card);
+
+    // Добавляем в список отображаемых рецептов
+    displayedRecipes.add(recipeKey);
 }
 
+// Функция для обновления только существующих карточек
+function updateDisplayedRecipes(containerId: string = "dynamic-cards") {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    // Очищаем контейнер
+    container.innerHTML = "";
+
+    // Добавляем только те рецепты, которые были отображены ранее
+    displayedRecipes.forEach(recipeKey => {
+        if (recipes[recipeKey]) {
+            const card = createRecipeCard(recipes[recipeKey], recipeKey);
+            container.appendChild(card);
+        }
+    });
+}
+
+// Обновляем рецепты при смене языка
+document.addEventListener('localeChanged', () => {
+    // Обновляем только отображаемые рецепты вместо всех
+    updateDisplayedRecipes();
+
+    // Если открыто модальное окно рецепта, обновляем его
+    const popup = document.getElementById("recipe-view-popup");
+    if (popup && popup.style.display === "block" && currentActiveRecipeKey) {
+        const recipeDetails = document.getElementById("recipe-details");
+        if (recipeDetails && recipes[currentActiveRecipeKey]) {
+            recipeDetails.innerHTML = createRecipeDetails(recipes[currentActiveRecipeKey]);
+
+            // Переинициализируем слайды если нужно
+            setTimeout(() => {
+                const slides = document.querySelectorAll('.slide');
+                const navButtons = document.querySelectorAll('.prev, .next');
+
+                if (slides.length <= 1) {
+                    navButtons.forEach(btn => (btn as HTMLElement).style.display = 'none');
+                } else {
+                    navButtons.forEach(btn => (btn as HTMLElement).style.display = 'block');
+                }
+
+                if (typeof (window as any).showSlides === 'function') {
+                    (window as any).slideIndex = 1;
+                    (window as any).showSlides(1);
+                }
+            }, 100);
+        }
+    }
+});
 
 export {
     recipes,
@@ -415,7 +494,8 @@ export {
     addRecipe,
     openFormPopup,
     closeFormPopup,
-    createRecipeDetails
+    createRecipeDetails,
+    updateDisplayedRecipes // Экспортируем новую функцию
 };
 
 (window as any).showRecipeSection = function (section: string, btn?: HTMLElement) {

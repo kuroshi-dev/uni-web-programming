@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8" />
@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/styles/style.css" />
     <title>Contact Us - Fluffy Stack</title>
-    <script type="module" src="/src/scripts/themeToggle.ts"></script>
-    <script type="module" src="/src/scripts/recipes.ts"></script>
+    <script type="module" src="/src/scripts/main.ts"></script>
 
     <script>
         (function () {
@@ -22,7 +21,6 @@
 
 <body>
     <header class="nav-top">
-
         <div class="nav-brand">
             <img src="/icons/FluffyStack.svg" alt="Fluffy Stack Logo" class="nav-logo" />
             <a href="/"> Fluffy Stack</a>
@@ -32,68 +30,69 @@
         </div>
 
         <ul class="nav-links">
-            <li><a href="about">About</a></li>
+            <li><a href="about" data-i18n="nav.about">About</a></li>
         </ul>
-
     </header>
 
     <nav class="nav-side">
         <ul class="nav-links-side">
-            <li><a href="/"><img src="/src/assets/icons/house.png" alt="Home icon" class="icon">Home</a></li>
-            <li><a href="pancakes"><img src="src/assets/icons/pancake.png" alt="Pancakes icon" class="icon">Pancakes</a>
-            </li>
+            <li><a href="/"><img src="/src/assets/icons/house.png" alt="Home icon" class="icon"><span
+                        data-i18n="nav.home">Home</span></a></li>
+            <li><a href="pancakes"><img src="src/assets/icons/pancake.png" alt="Pancakes icon" class="icon"><span
+                        data-i18n="nav.pancakes">Pancakes</span></a></li>
             <li><a href="/contact_us"><img src="src/assets/icons/contact-mail.png" alt="Contact Us icon"
-                        class="icon">Contact
-                    Us</a>
-            </li>
+                        class="icon"><span data-i18n="nav.contact">Contact Us</span></a></li>
         </ul>
     </nav>
 
     <main>
         <section class="contact-section">
-            <h1>Contact Us</h1>
-            <p>If you have any questions, suggestions, or feedback, feel free to reach out to us!</p>
+            <h1 data-i18n="contact.title">Contact Us</h1>
+            <p data-i18n="contact.subtitle">If you have any questions, suggestions, or feedback, feel free to reach out
+                to us!</p>
 
-            <form class="contact-form" id="contactForm">
-                <label for="name">Ім'я:</label>
-                <input type="text" id="name" name="name" required minlength="2" />
+            <form id="contactForm">
+                <div class="form-group">
+                    <label data-i18n="contact.form.name">Name</label>
+                    <input type="text" name="name" data-i18n="contact.form.name" placeholder="Name">
+                </div>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required />
+                <div class="form-group">
+                    <label data-i18n="contact.form.email">Email</label>
+                    <input type="email" name="email" data-i18n="contact.form.email" placeholder="Email">
+                </div>
 
-                <!-- ДОДАТИ: -->
-                <fieldset>
-                    <legend>Як ви про нас дізналися?</legend>
-                    <label><input type="radio" name="source" value="search" required> Пошук</label>
-                    <label><input type="radio" name="source" value="social"> Соц. мережі</label>
-                    <label><input type="radio" name="source" value="friend"> Від друзів</label>
-                </fieldset>
+                <div class="form-group">
+                    <label data-i18n="contact.form.country">Country</label>
+                    <select name="country">
+                        <option value="">-- Select Country --</option>
+                        <option value="ukraine">Ukraine</option>
+                        <option value="usa">USA</option>
+                    </select>
+                </div>
 
-                <fieldset>
-                    <legend>Які рецепти вас цікавлять?</legend>
-                    <label><input type="checkbox" name="interest" value="pancakes"> Млинці</label>
-                    <label><input type="checkbox" name="interest" value="waffles"> Вафлі</label>
-                    <label><input type="checkbox" name="interest" value="crepes"> Крепи</label>
-                </fieldset>
+                <div class="form-group">
+                    <label data-i18n="contact.form.source">How did you hear about us?</label>
+                    <select name="source">
+                        <option value="">-- Select Option --</option>
+                        <option value="google">Google</option>
+                        <option value="social">Social Media</option>
+                        <option value="friends">Friends</option>
+                    </select>
+                </div>
 
-                <label for="country">Країна:</label>
-                <select id="country" name="country" required>
-                    <option value="">Оберіть...</option>
-                    <option value="ua">Україна</option>
-                    <option value="us">США</option>
-                    <option value="uk">Великобританія</option>
-                </select>
+                <div class="form-group">
+                    <label data-i18n="contact.form.message">Message</label>
+                    <textarea name="message" data-i18n="contact.form.message" placeholder="Message"></textarea>
+                </div>
 
-                <label for="message">Повідомлення:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Надіслати</button>
+                <button type="submit" data-i18n="contact.form.submit">Submit</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Buliukin Vladimir. All rights reserved.</p>
+        <p data-i18n="copyright">&copy; 2025 Buliukin Vladimir. All rights reserved.</p>
     </footer>
 </body>
 

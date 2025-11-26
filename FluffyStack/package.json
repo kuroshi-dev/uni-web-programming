@@ -12,6 +12,10 @@
     "vite": "^7.1.7"
   },
   "dependencies": {
-    "bootstrap": "^5.3.8"
+    "@types/jquery": "^3.5.33",
+    "bootstrap": "^5.3.8",
+    "i18n": "^0.15.3",
+    "jquery": "^3.7.1",
+    "jquery-validation": "^1.21.0"
   }
 }

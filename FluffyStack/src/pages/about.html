@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg" href="/icons/FluffyStack.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/src/styles/style.css" />
-  <title>About - Fluffy Stack</title>
-  <script type="module" src="/src/scripts/themeToggle.ts"></script>
+  <title>About - FluffyStack</title>
+  <script type="module" src="/src/scripts/main.ts"></script>
 
   <script>
     (function () {
@@ -17,12 +17,10 @@
       }
     })();
   </script>
-
 </head>
 
 <body>
   <header class="nav-top">
-
     <div class="nav-brand">
       <img src="/icons/FluffyStack.svg" alt="Fluffy Stack Logo" class="nav-logo" />
       <a href="/"> Fluffy Stack</a>
@@ -32,40 +30,67 @@
     </div>
 
     <ul class="nav-links">
-      <li><a href="about">About</a></li>
+      <li><a href="/" data-i18n="nav.home">Home</a></li>
     </ul>
-
   </header>
 
   <nav class="nav-side">
     <ul class="nav-links-side">
-      <li><a href="/"><img src="/src/assets/icons/house.png" alt="Home icon" class="icon">Home</a></li>
-      <li><a href="/pancakes"><img src="/src/assets/icons/pancake.png" alt="Pancakes icon" class="icon">Pancakes</a>
-      </li>
-      <li><a href="/contact_us"><img src="/src/assets/icons/contact-mail.png" alt="Contact Us icon" class="icon">Contact
-          Us</a>
-      </li>
+      <li><a href="/"><img src="/src/assets/icons/house.png" alt="Home icon" class="icon"><span
+            data-i18n="nav.home">Home</span></a></li>
+      <li><a href="pancakes"><img src="src/assets/icons/pancake.png" alt="Pancakes icon" class="icon"><span
+            data-i18n="nav.pancakes">Pancakes</span></a></li>
+      <li><a href="/contact_us"><img src="src/assets/icons/contact-mail.png" alt="Contact Us icon" class="icon"><span
+            data-i18n="nav.contact">Contact Us</span></a></li>
     </ul>
   </nav>
 
-  </header>
   <main>
-
-    <section class="info-section">
-      <h2>About Our Project</h2>
-      <p>This project was created as part of a laboratory work for the Web Programming course at Central Ukrainian
-        National Technical University (CNTU).</p>
+    <section class="about-hero">
+      <h1 data-i18n="about.page.title">Our Story</h1>
+      <p data-i18n="about.subtitle">The FluffyStack Story</p>
     </section>
 
-    <section class="credits-section">
-      <h2>Credits</h2>
-      <ul>
-        <li><a href="https://www.flaticon.com/free-icons/">Icons by adriansyah - Flaticon</a></li>
-        <li>Images from Unsplash</li>
-      </ul>
+    <section class="about-content">
+      <div class="about-text">
+        <p data-i18n="about.content.1">FluffyStack is a family business that started with a simple love for pancakes.
+        </p>
+        <p data-i18n="about.content.2">We believe every pancake should be the perfect combination of taste and texture.
+        </p>
+        <p data-i18n="about.content.3">Our goal is to share the best recipes with the world.</p>
+      </div>
+
+      <div class="mission-section">
+        <h2 data-i18n="about.mission">Our Mission</h2>
+        <p data-i18n="about.mission.text">To make the best pancakes accessible to everyone.</p>
+      </div>
+
+      <div class="values-section">
+        <h2 data-i18n="about.values">Our Values</h2>
+
+        <div class="values-grid">
+          <div class="value-item">
+            <h3 data-i18n="about.value.quality">Quality</h3>
+            <p data-i18n="about.value.quality.desc">We use only the finest ingredients</p>
+          </div>
+
+          <div class="value-item">
+            <h3 data-i18n="about.value.tradition">Tradition</h3>
+            <p data-i18n="about.value.tradition.desc">Combining classic recipes with modern techniques</p>
+          </div>
+
+          <div class="value-item">
+            <h3 data-i18n="about.value.family">Family</h3>
+            <p data-i18n="about.value.family.desc">Every recipe is made with love for the family</p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
+
   <footer>
-    <p>&copy; 2025 Buliukin Vladimir. All rights reserved.</p>
+    <p data-i18n="copyright">&copy; 2025 Buliukin Vladimir. All rights reserved.</p>
   </footer>
 </body>
+
+</html>

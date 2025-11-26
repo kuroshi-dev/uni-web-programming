@@ -1,3 +1,22 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --text-third: #999999;
+  --text-hover: #555555;
+  --element-hover: #f0f0f0;
+  --card-bg: #ffffff;
+  --card-border: #e5e5e5;
+  --header-bg: #ffffff;
+  --primary-color: #3b82f6;
+  --primary-dark: #2563eb;
+  --border-color: #e5e5e5;
+  --background-color: #ffffff;
+  --background-secondary: #f8f9fa;
+  --error-color: #ef4444;
+  --success-color: #10b981;
+}
+
 html {
   transition: 0s, color 0s;
 }

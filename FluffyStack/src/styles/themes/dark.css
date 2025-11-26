@@ -10,6 +10,13 @@ html.dark-theme,
   --card-bg: #222222;
   --card-border: #333;
   --header-bg: #222222;
+  --primary-color: #3b82f6;
+  --primary-dark: #1e40af;
+  --border-color: #333;
+  --background-color: #1a1a1a;
+  --background-secondary: #222222;
+  --error-color: #ef4444;
+  --success-color: #10b981;
 
   transition: background-color 0.3s, color 0.3s;
   min-height: 100vh;
@@ -44,6 +51,7 @@ html.dark-theme,
 .dark-theme .nav-top {
   background-color: var(--header-bg);
   box-shadow: var(--header-shadow);
+  border-bottom: 1px solid var(--card-border);
 }
 
 .dark-theme .nav-side {
@@ -58,6 +66,26 @@ html.dark-theme,
 .dark-theme .nav-side a:hover {
   background-color: var(--element-hover);
   color: var(--text-color);
+}
+
+/*============ Language Switcher ============*/
+.dark-theme .language-switcher {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+.dark-theme .lang-btn {
+  color: var(--text-secondary);
+}
+
+.dark-theme .lang-btn:hover {
+  background: var(--element-hover);
+  color: var(--text-color);
+}
+
+.dark-theme .lang-btn.active {
+  background: var(--primary-color);
+  color: white;
 }
 
 /*============ Card Elements ============*/
@@ -93,15 +121,37 @@ html.dark-theme,
   color: var(--text-color);
 }
 
+.dark-theme .contact-section {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
 .dark-theme .contact-container {
   color: var(--text-color);
-  background: var(--background-color)
+  background: var(--background-color);
 }
 
 .dark-theme textarea,
-input {
-  background-color: var(--background-color);
+.dark-theme input,
+.dark-theme select {
+  background-color: var(--card-bg) !important;
   border-color: var(--card-border) !important;
+  color: var(--text-color) !important;
+}
+
+.dark-theme .form-group input,
+.dark-theme .form-group select,
+.dark-theme .form-group textarea {
+  background-color: var(--card-bg);
+  border-color: var(--card-border);
+  color: var(--text-color);
+}
+
+.dark-theme .form-group input:focus,
+.dark-theme .form-group select:focus,
+.dark-theme .form-group textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 150, 255, 0.1);
 }
 
 .dark-theme .newsletter-section {

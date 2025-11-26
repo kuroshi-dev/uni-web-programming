@@ -54,17 +54,41 @@
             <h1>Contact Us</h1>
             <p>If you have any questions, suggestions, or feedback, feel free to reach out to us!</p>
 
-            <form class="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required />
+            <form class="contact-form" id="contactForm">
+                <label for="name">Ім'я:</label>
+                <input type="text" id="name" name="name" required minlength="2" />
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required />
 
-                <label for="message">Message:</label>
+                <!-- ДОДАТИ: -->
+                <fieldset>
+                    <legend>Як ви про нас дізналися?</legend>
+                    <label><input type="radio" name="source" value="search" required> Пошук</label>
+                    <label><input type="radio" name="source" value="social"> Соц. мережі</label>
+                    <label><input type="radio" name="source" value="friend"> Від друзів</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Які рецепти вас цікавлять?</legend>
+                    <label><input type="checkbox" name="interest" value="pancakes"> Млинці</label>
+                    <label><input type="checkbox" name="interest" value="waffles"> Вафлі</label>
+                    <label><input type="checkbox" name="interest" value="crepes"> Крепи</label>
+                </fieldset>
+
+                <label for="country">Країна:</label>
+                <select id="country" name="country" required>
+                    <option value="">Оберіть...</option>
+                    <option value="ua">Україна</option>
+                    <option value="us">США</option>
+                    <option value="uk">Великобританія</option>
+                </select>
+
+                <label for="message">Повідомлення:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
 
-                <button type="submit">Submit</button>
+                <button type="submit">Надіслати</button>
+            </form>
         </section>
     </main>
 

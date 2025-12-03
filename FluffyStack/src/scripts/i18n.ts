@@ -258,6 +258,7 @@ export const translations: { [locale: string]: Translations } = {
         'about.mission.text': 'To make the best pancakes accessible to everyone.',
         'about.values': 'Our Values',
         'about.value.quality': 'Quality',
+        
         'about.value.quality.desc': 'We use only the finest ingredients',
         'about.value.tradition': 'Tradition',
         'about.value.tradition.desc': 'Combining classic recipes with modern techniques',

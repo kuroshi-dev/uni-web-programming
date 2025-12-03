@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 1 - Розворот слів</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .result {
+            background: #e8f4f8;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Завдання 1: Розворот слів</h1>
+    <p><a href="index.html">← Назад</a></p>
+    
+    <form method="POST" action="task1.php">
+        <label for="text">Введіть текст:</label><br>
+        <textarea name="text" id="text" required>Привіт світ! Це тестовий текст.</textarea><br><br>
+        
+        <button type="submit">Обробити текст</button>
+    </form>
+</body>
+</html>

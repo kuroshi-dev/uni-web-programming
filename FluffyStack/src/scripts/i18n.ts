@@ -184,6 +184,18 @@ export const translations: { [locale: string]: Translations } = {
         'hashtag.blinis': '#блінчики',
         'hashtag.traditional': '#традиційні',
         'hashtag.yeasted': '#дріжджові',
+
+        // Валидация форм
+        'form.email.required': 'Будь ласка, введіть email адресу',
+        'form.email.invalid': 'Будь ласка, введіть коректну email адресу',
+        'form.email.forbidden': 'Email містить заборонені символи',
+        'form.name.required': 'Будь ласка, введіть ваше ім\'я',
+        'form.name.invalid': 'Ім\'я повинно містити тільки літери',
+        'form.message.required': 'Будь ласка, введіть повідомлення',
+        'form.country.required': 'Будь ласка, оберіть країну',
+        'form.source.required': 'Будь ласка, вкажіть джерело',
+        'newsletter.success': 'Дякуємо за підписку!',
+        'contact.success': 'Повідомлення успішно відправлено!',
     },
 
     en: {
@@ -367,6 +379,18 @@ export const translations: { [locale: string]: Translations } = {
         'hashtag.blinis': '#blinis',
         'hashtag.traditional': '#traditional',
         'hashtag.yeasted': '#yeasted',
+
+        // Form validation
+        'form.email.required': 'Please enter an email address',
+        'form.email.invalid': 'Please enter a valid email address',
+        'form.email.forbidden': 'Email contains forbidden characters',
+        'form.name.required': 'Please enter your name',
+        'form.name.invalid': 'Name should contain only letters',
+        'form.message.required': 'Please enter a message',
+        'form.country.required': 'Please select a country',
+        'form.source.required': 'Please specify the source',
+        'newsletter.success': 'Thank you for subscribing!',
+        'contact.success': 'Message sent successfully!',
     }
 };
 
@@ -412,10 +436,8 @@ export class I18n {
     }
 
     private addLanguageSwitcher(): void {
-        // Проверяем, есть ли уже переключатель
         if (document.querySelector('.language-switcher')) return;
 
-        // Создаем переключатель
         const switcher = document.createElement('div');
         switcher.className = 'language-switcher';
         switcher.innerHTML = `
@@ -423,21 +445,17 @@ export class I18n {
             <button class="lang-btn" data-lang="en">EN</button>
         `;
 
-        // Ищем лучшее место для размещения
         const navTop = document.querySelector('.nav-top');
         const navLinks = document.querySelector('.nav-links');
 
         if (navLinks) {
-            // Добавляем в конец списка навигации
             const li = document.createElement('li');
             li.appendChild(switcher);
             navLinks.appendChild(li);
         } else if (navTop) {
-            // Если нет nav-links, добавляем прямо в nav-top
             navTop.appendChild(switcher);
         }
 
-        // Добавляем обработчики событий
         switcher.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const target = e.target as HTMLButtonElement;
@@ -466,7 +484,6 @@ export class I18n {
     }
 
     private updatePageContent(): void {
-        // Обновляем элементы с data-i18n атрибутом
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             if (key) {
@@ -479,7 +496,6 @@ export class I18n {
             }
         });
 
-        // Обновляем title страницы
         this.updatePageMeta();
     }
 
@@ -510,5 +526,4 @@ export class I18n {
 
 export const i18n = new I18n();
 
-// Экспортируем для глобального использования
 (window as any).i18n = i18n;

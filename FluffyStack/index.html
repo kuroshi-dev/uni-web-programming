@@ -9,26 +9,24 @@
 
   <script type="module" src="/src/scripts/themeToggle.ts"></script>
   <script type="module" src="/src/scripts/i18n.ts"></script>
+  <script type="module" src="/src/scripts/slides.ts"></script>
+  <script type="module" src="/src/scripts/newsletter.ts"></script>
   <script>
     (function () {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme === 'dark-theme') {
         document.documentElement.classList.add('dark-theme');
       }
-
-      // Встановлюємо українську мову за замовчуванням
       const savedLocale = localStorage.getItem('fluffystack-locale') || 'uk';
       document.documentElement.setAttribute('lang', savedLocale);
     })();
   </script>
-  <script type="module" src="/src/scripts/slides.ts"></script>
 
   <link rel="icon" type="image/svg" href="/icons/FluffyStack.svg" />
   <title data-i18n="site.title">Fluffy Stack - Найкращі млинці</title>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Инициализация i18n будет добавлена в i18n.ts
     });
   </script>
 

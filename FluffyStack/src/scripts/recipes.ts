@@ -199,24 +199,20 @@ const recipes: Record<string, any> = {
     },
 };
 
-// Функция для получения локализованного текста
 function getLocalizedText(key: string): string {
     if (key.startsWith('hashtag.') || key.startsWith('recipe.') || key.startsWith('instruction.') || key.startsWith('ingredient.')) {
         return i18n.t(key);
     }
-    return key; // Возвращаем как есть, если нет ключа локализации
+    return key;
 }
 
-// Функция для получения локализованного бейджа
 function getLocalizedBadge(badge: string): string {
     const badgeKey = `badge.${badge.toLowerCase()}`;
     return i18n.t(badgeKey);
 }
 
-// Добавляем переменную для отслеживания текущего рецепта
 let currentActiveRecipeKey: string | null = null;
 
-// Добавляем переменную для отслеживания отображаемых рецептов
 let displayedRecipes: Set<string> = new Set();
 
 function openFormPopup(event: Event) {
@@ -225,7 +221,6 @@ function openFormPopup(event: Event) {
     const recipeKey = (event.target as HTMLElement).id.replace('view-recipe-', '');
     const recipe = recipes[recipeKey];
 
-    // Сохраняем ключ активного рецепта
     currentActiveRecipeKey = recipeKey;
 
     if (popup && recipeDetails) {
@@ -369,7 +364,6 @@ function closeFormPopup() {
     if (popup) {
         popup.style.display = "none";
     }
-    // Сбрасываем активный рецепт
     currentActiveRecipeKey = null;
 }
 
@@ -418,12 +412,12 @@ function renderRecipes(recipes: Record<string, any>, containerId: string = "dyna
     if (!container) return;
 
     container.innerHTML = "";
-    displayedRecipes.clear(); // Очищаем список отображаемых рецептов
+    displayedRecipes.clear();
 
     Object.entries(recipes).forEach(([key, recipe]) => {
         const card = createRecipeCard(recipe, key);
         container.appendChild(card);
-        displayedRecipes.add(key); // Добавляем в список отображаемых
+        displayedRecipes.add(key);
     });
 }
 
@@ -434,19 +428,15 @@ function addRecipe(recipeKey: string, containerId: string = "dynamic-cards") {
     const card = createRecipeCard(recipes[recipeKey], recipeKey);
     container.appendChild(card);
 
-    // Добавляем в список отображаемых рецептов
     displayedRecipes.add(recipeKey);
 }
 
-// Функция для обновления только существующих карточек
 function updateDisplayedRecipes(containerId: string = "dynamic-cards") {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    // Очищаем контейнер
     container.innerHTML = "";
 
-    // Добавляем только те рецепты, которые были отображены ранее
     displayedRecipes.forEach(recipeKey => {
         if (recipes[recipeKey]) {
             const card = createRecipeCard(recipes[recipeKey], recipeKey);
@@ -455,19 +445,15 @@ function updateDisplayedRecipes(containerId: string = "dynamic-cards") {
     });
 }
 
-// Обновляем рецепты при смене языка
 document.addEventListener('localeChanged', () => {
-    // Обновляем только отображаемые рецепты вместо всех
     updateDisplayedRecipes();
 
-    // Если открыто модальное окно рецепта, обновляем его
     const popup = document.getElementById("recipe-view-popup");
     if (popup && popup.style.display === "block" && currentActiveRecipeKey) {
         const recipeDetails = document.getElementById("recipe-details");
         if (recipeDetails && recipes[currentActiveRecipeKey]) {
             recipeDetails.innerHTML = createRecipeDetails(recipes[currentActiveRecipeKey]);
 
-            // Переинициализируем слайды если нужно
             setTimeout(() => {
                 const slides = document.querySelectorAll('.slide');
                 const navButtons = document.querySelectorAll('.prev, .next');
@@ -495,7 +481,7 @@ export {
     openFormPopup,
     closeFormPopup,
     createRecipeDetails,
-    updateDisplayedRecipes // Экспортируем новую функцию
+    updateDisplayedRecipes
 };
 
 (window as any).showRecipeSection = function (section: string, btn?: HTMLElement) {

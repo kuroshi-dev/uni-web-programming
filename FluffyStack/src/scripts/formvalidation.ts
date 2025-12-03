@@ -69,6 +69,19 @@ $(() => {
                 required: i18n.t('form.message.required'),
                 minlength: i18n.t('form.message.minlength')
             }
+        },
+        errorClass: 'invalid',
+        validClass: 'valid',
+        errorElement: 'span',
+        errorPlacement: function(error, element) {
+            error.addClass('error-message');
+            error.insertAfter(element);
+        },
+        highlight: function(element) {
+            $(element).addClass('invalid').removeClass('valid');
+        },
+        unhighlight: function(element) {
+            $(element).removeClass('invalid').addClass('valid');
         }
     });
 

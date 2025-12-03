@@ -451,3 +451,103 @@
         hyphens: auto;
     }
 }
+
+/* Newsletter form validation styles */
+.subscribe-form input[type="email"].valid {
+  border-color: #4caf50;
+  outline-color: #4caf50;
+}
+
+.subscribe-form input[type="email"].invalid {
+  border-color: #f44336;
+  outline-color: #f44336;
+}
+
+.error-message {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.success-message {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input[type="email"],
+input[type="text"],
+textarea,
+select {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #ddd;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+input.valid {
+    border-color: #4caf50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+input.invalid,
+input:invalid:not(:placeholder-shown),
+textarea.invalid,
+select.invalid {
+    border-color: #f44336;
+    box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+    color: #f44336;
+}
+
+input:invalid,
+textarea:invalid,
+select:invalid {
+    color: #f44336;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+input.invalid::placeholder,
+textarea.invalid::placeholder {
+    color: #ffcdd2;
+}
+
+input:user-invalid,
+textarea:user-invalid,
+select:user-invalid {
+    color: #f44336;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+@keyframes successPulse {
+    0%, 100% {
+        border-color: #4caf50;
+    }
+    50% {
+        border-color: #81c784;
+    }
+}
+
+input.success {
+    animation: successPulse 1s ease-in-out;
+    border-color: #4caf50;
+}
+
+.form-group input.invalid ~ label,
+.form-group textarea.invalid ~ label,
+.form-group select.invalid ~ label {
+    color: #f44336;
+}

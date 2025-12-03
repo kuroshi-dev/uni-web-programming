@@ -117,8 +117,8 @@
     <section class="newsletter-section">
       <h2 data-i18n="home.newsletter.title">Залишайтеся в курсі</h2>
       <p data-i18n="home.newsletter.subtitle">Підпишіться на нашу розсилку для отримання нових рецептів та оновлень</p>
-      <form class="subscribe-form">
-        <input type="email" data-i18n-placeholder="home.newsletter.placeholder" placeholder="Введіть ваш email"
+      <form name="newsletter" id="newsletter-form" class="subscribe-form" action="mailto:newsletter@fluffystack.com" method="post" enctype="text/plain">
+        <input type="email" name="email" data-i18n-placeholder="home.newsletter.placeholder" placeholder="Введіть ваш email"
           required>
         <button type="submit" data-i18n="home.newsletter.button">Підписатися</button>
       </form>
